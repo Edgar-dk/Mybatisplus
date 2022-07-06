@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    #数据库类型
+    type: com.zaxxer.hikari.HikariDataSource
+    #连接数据库的工具
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #数据库的地址
+    url: jdbc:mysql://localhost:3306/mybatisplus?characterEncoding=utf-8&userSSL=false
+    username: root
+    password: root
+
+#使用MybatisPlus，用的是包里面写好的方法，SQL语句没有
+#办法展示出来，使用下面的代码可以展示出SQL语句
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
