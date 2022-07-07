@@ -28,11 +28,11 @@ public class MybatisPlusTest {
     @Test
     public void selectAll(){
 
-        /*01.按照全部数据*//*
+//        01.按照全部数据
         List<User> users = userMapper.selectList(null);
         for (User user : users) {
             System.out.println(user);
-        }*/
+        }
 
         /*02.按照id去查询数据*/
         /*User user = userMapper.selectById(1L);
@@ -57,8 +57,8 @@ public class MybatisPlusTest {
         }*/
 
         /*05.返回值是Map的查询方式*/
-        Map<String, Object> map = userMapper.selectMapById(1L);
-        System.out.println(map);
+        /*Map<String, Object> map = userMapper.selectMapById(1L);
+        System.out.println(map);*/
     }
 
     /*2.插入信息*/
