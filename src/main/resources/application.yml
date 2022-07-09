@@ -14,7 +14,10 @@ spring:
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    default-enum-type-handler: org.apache.ibatis.type.EnumOrdinalTypeHandler
   #全局配置，实体类中到数据库中，全部都加上这个前缀
   global-config:
     db-config:
       table-prefix: t_
+  #使用枚举，扫描对应的包，把包里面的内容属性填充到数据库中
+  type-enums-package: com.sias.plus.enums

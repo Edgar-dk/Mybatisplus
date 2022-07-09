@@ -1,6 +1,7 @@
 package com.sias.plus.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
+import com.sias.plus.enums.SexEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -33,6 +34,7 @@ public class User {
     private String email;
 
 
+    private SexEnum sex;
     /*3.逻辑删除字段
     *   使用之后，会吧里面的标识符变成1，1表示
     *   是逻辑删除，其实是修改的方式，把0变成了1*/

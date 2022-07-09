@@ -53,9 +53,21 @@ public class MybatisPlusPluginTest {
          p1.setPrice(p1.getPrice() + 50);
          int result1 = productMapper.updateById(p1);
          System.out.println("小李修改结果：" + result1);
-        // 4、小王将商品减了30元，存入了数据库
+
+         /*4.小王将商品减了30元，存入了数据库
+             一开始的时候，第一次获取的version是一个数
+             但是在这个操作之前，小李操作的数据库，把数据更改了
+             版本号不一样，所以操作失败，这次在做一下判断
+             这个判断就是从数据库中从新获取数据
+          */
          p2.setPrice(p2.getPrice() - 30);
          int result2 = productMapper.updateById(p2);
+         if (result2==0){
+             Product product = productMapper.selectById(1);
+             product.setPrice(product.getPrice()-30);
+             int i = productMapper.updateById(product);
+             System.out.println("优化操作："+i);
+         }
          System.out.println("小王修改结果：" + result2);
         // 最后的结果
          Product p3 = productMapper.selectById(1L);
