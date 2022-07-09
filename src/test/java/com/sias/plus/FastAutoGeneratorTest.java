@@ -14,7 +14,6 @@ import java.util.Collections;
  */
 @SpringBootTest
 public class FastAutoGeneratorTest {
-
     public static void main(String[] args) {
         FastAutoGenerator.create("jdbc:mysql://127.0.0.1:3306/mybatisplus? characterEncoding=utf-8&userSSL=false", "root", "root")
                 .globalConfig(builder -> {
